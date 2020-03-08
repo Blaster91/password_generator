@@ -52,5 +52,17 @@ right_frame.grid(row=0, column=1, sticky=W)
 # afficher la frame
 frame.pack(expand=YES)
 
+#création d'une barre de menu
+menu_bar = Menu(window)
+
+# creer un premier menu
+file_menu = Menu(menu_bar, tearoff=0)
+file_menu.add_command(label="Nouveau", command=generate_password)
+file_menu.add_command(label="Quitter", command=window.quit)
+menu_bar.add_cascade(label="Fichier", menu=file_menu)
+
+# configurer notre fenetre pour ajouter cette menu bar
+window.config(menu=menu_bar)
+
 # afficher la fenetre
 window.mainloop()
